@@ -11,27 +11,47 @@ export default function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    !!(inputValue)?console.log("value"):console.log("empty")
-    setTodoitems(tmpTodoitems => {
-      return [...todoitems,{id: crypto.randomUUID(),todotext:inputValue, completed:false},]
-    })
+    // !!(inputValue)?console.log("value"):console.log("empty")
+    if (inputValue.trim().length !== 0) {
+      setTodoitems(tmpTodoitems => {
+        return [...todoitems,{id: crypto.randomUUID(),todotext:inputValue, completed:false},]
+      })
+    }
     setInputValue('');
+    return [todoitems]
   }
+
+  function setCheckStatus(id, completed) {
+    setTodoitems(tmpTodoitems => {
+      return tmpTodoitems.map(todos => {
+        if (todos.id === id) {
+          return {...todos, completed}
+        }
+        return todos
+      })
+    })
+  }
+
+  function handleDelete(todos) {
+    setTodoitems(tmpTodoitems => todoitems.filter((todo)=> todo.id !== todos.id ))
+  }
+
 
   return (
     <>
       <h1 className="header">To Do list</h1>
       <ul className="list">
+        {todoitems.length === 0 && "Enter your first to do items"}
         {todoitems.map(todos => {
         return ( 
-        <li>
+        <li key={todos.id}>
         <label>
-          <input type="checkbox" />{todos.todotext}&nbsp;
+          <input type="checkbox" onChange={e => setCheckStatus(todos.id,e.target.checked)}/>{todos.todotext}&nbsp;
 {//    Code for setting the check box state - breaks functionality now
 //         <input type="checkbox" checked={todos.completed} />{todos.todotext}
         }
           </label>
-        <button className="btn btn-delete">Delete</button>
+        <button className="btn btn-delete" onClick={e => handleDelete(todos)}>Delete</button>
       </li>)
         })}
       </ul>
