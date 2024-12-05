@@ -5,7 +5,6 @@ export default function AddTodoItems({ onSubmit }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    !!inputValue ? console.log("value") : console.log("empty");
     if (inputValue.trim().length !== 0) {
       onSubmit(inputValue);
     }
@@ -14,10 +13,11 @@ export default function AddTodoItems({ onSubmit }) {
 
   return (
     <form className="new-todo" onSubmit={handleSubmit}>
-      <label htmlfor="form_item">New To Do: </label>
+      <label htmlFor="form_item">New To Do:&nbsp;</label>
       <input
         type="text"
         id="form_item"
+        placeholder="Enter your task"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />

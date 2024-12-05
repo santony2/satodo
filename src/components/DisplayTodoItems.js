@@ -6,7 +6,7 @@ export default function DisplayTodoItems({
   handleDelete,
 }) {
   return (
-    <ul className="list">
+    <ul className="todo-list">
       {todoitems.length === 0 && "Enter your first to do items"}
       {todoitems.map((todos) => {
         return (

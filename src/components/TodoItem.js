@@ -6,17 +6,18 @@ export default function TodoItem({
   handleDelete,
 }) {
   return (
-    <li>
-      <label>
+    <li className="todo-items">
+      <label className="container">
         <input
           type="checkbox"
           checked={completed}
           onChange={(e) => setCheckStatus(id, e.target.checked)}
         />
-        {todotext}
+        <span className="checkmark"></span>
+        {todotext}&nbsp;
       </label>
       <button className="btn btn-delete" onClick={(e) => handleDelete(id)}>
-        Delete
+        X
       </button>
     </li>
   );

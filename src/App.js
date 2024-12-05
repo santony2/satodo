@@ -1,4 +1,5 @@
-import "./App.css";
+//import "./App.css";
+import "./components/Styles.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import AddTodoItems from "./components/AddTodoItems";
