@@ -20,7 +20,7 @@
     },
     "host": {
       "cors": {
-        "origins": [],
+        "origins": ["*"],
         "allow-credentials": false
       },
       "authentication": {
@@ -30,7 +30,7 @@
     }
   },
   "entities": {
-    "todo_list": {
+    "Todos": {
       "source": {
         "object": "dbo.todo_list",
         "type": "table"
