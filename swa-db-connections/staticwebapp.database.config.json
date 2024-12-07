@@ -32,14 +32,14 @@
   "entities": {
     "todo_list": {
       "source": {
-        "object": "sa-iit-tododb.todo_list",
+        "object": "dbo.todo_list",
         "type": "table"
       },
       "graphql": {
         "enabled": true,
         "type": {
           "singular": "todo_list",
-          "plural": "todo_lists"
+          "plural": "todo_list"
         }
       },
       "rest": {
