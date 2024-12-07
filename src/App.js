@@ -14,7 +14,7 @@ export default function App() {
 
     return JSON.parse(localValue);
   });
-
+// sample
   useEffect(() => {
     localStorage.setItem("TODOS", JSON.stringify(todoitems));
   }, [todoitems]);
