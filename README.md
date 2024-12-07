@@ -1,4 +1,4 @@
-# To Do App
+# My To Do App
 
 This app tracks your to do list to help you keep track of things to do.
 
@@ -19,7 +19,7 @@ A To Do app is a web-based application that allows users to create and manage th
 
 #### Fork the app
 
-- For the app on GitHub (https://github.com/santony2/satodo)
+- Fork the app on GitHub (https://github.com/santony2/satodo)
 - In the project directory, run `npm start` to launch the app locally.
 - Make necesary changes to the code and test it.
 - When you are ready, create a pull request to the master branch.
@@ -49,5 +49,5 @@ This project is not licensed.
 
 Inspiration and guidance.
 
-- Raj Krishnan - Instructor for Programming and Web Applications course at Illinois Institute of Technology.
+- Raj Krishnan - Instructor for Programming and Application Foundations at Illinois Tech.
 - Coursera for additional guidance and learning on skill sets to develop this app.
